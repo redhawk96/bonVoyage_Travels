@@ -1,0 +1,289 @@
+<%- include('includes/header.ejs') %>
+<script>
+	$(function () {
+		$("#slider-range").slider({
+			range: true,
+			min: 0,
+			max: 10000,
+			values: [1000, 2500],
+			slide: function (event, ui) {
+				$("#amount").val("Price : $" + ui.values[0] + " - $" + ui.values[1]);
+			}
+		});
+		$("#amount").val("Price : $" + $("#slider-range").slider("values", 0) +
+			" - $" + $("#slider-range").slider("values", 1));
+	});
+</script>
+
+<%- include('includes/navigation.ejs') %>
+<!-- start banner Area -->
+<section class="about-banner relative">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					<%= bannerTitle %> Packages
+				</h1>
+				<p class="text-white link-nav"><a href="/">Home </a> <span class="lnr lnr-arrow-right"></span>
+					<a href="packages.html"> <%= bannerTitle %> Packages</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+
+<!-- Start hot-deal Area -->
+<section class="hot-deal-area section-gap">
+	<div class="container">
+		<section class="ftco-section ftco-degree-bg">
+			<div class="row">
+				<div class="col-lg-3 sidebar">
+					<div class="sidebar-outline bg-white p-3">
+						<h3 class="heading mb-4">Find City</h3>
+						<form action="#">
+							<div class="fields">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Destination, City">
+								</div>
+								<div class="form-group">
+									<div class="select-wrap one-third">
+										<div class="icon"><span class="ion-ios-arrow-down"></span></div>
+										<select name="" id="" class="form-control" placeholder="Keyword search">
+											<option value="">Select Location</option>
+											<option value="">San Francisco USA</option>
+											<option value="">Berlin Germany</option>
+											<option value="">Lodon United Kingdom</option>
+											<option value="">Paris Italy</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="text" id="checkin_date" class="form-control rounded-0"
+										placeholder="Date from">
+								</div>
+								<div class="form-group">
+									<input type="text" id="checkin_date" class="form-control rounded-0"
+										placeholder="Date to">
+								</div>
+								<div class="form-group">
+									<input type="text" id="amount" readonly style="border:0; background: transparent; outline: transparent" class="form-control py-3 px-0">
+									<div id="slider-range"></div>
+								</div>
+								<div class="form-group">
+									<input type="submit" value="Search"
+										class="btn-search btn-block py-3 px-5 rounded-0">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-9 px-lg-1">
+					<section class="destinations-area bg-white">
+						<div class="row">
+							<div class="col-lg-4 mb-4">
+								<div class="single-destinations">
+									<div class="thumb">
+										<img class="img-fluid" src="/images/packages/d2.jpg" alt="">
+									</div>
+									<div class="details">
+										<h4>Holiday Sea beach Blue Ocean</h4>
+										<p>
+											United staes of America
+										</p>
+										<li class="d-flex justify-content-between align-items-center">
+											<span>Rooms starting at </span>
+											<span class="thumb-price"> $40
+												/night</span>
+										</li>
+										<ul class="package-list">
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Far far away, behind the word mountains, far from the
+													countries</span>
+											</li>
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Price per person</span>
+												<a href="#" class="btn btn-sm btn-book">book now</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4">
+								<div class="single-destinations">
+									<div class="thumb">
+										<img class="img-fluid" src="/images/packages/d3.jpg" alt="">
+									</div>
+									<div class="details">
+										<h4>Holiday Sea beach Blue Ocean</h4>
+										<p>
+											United staes of America
+										</p>
+										<li class="d-flex justify-content-between align-items-center">
+											<span>Rooms starting at </span>
+											<span class="thumb-price"> $40
+												/night</span>
+										</li>
+										<ul class="package-list">
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Far far away, behind the word mountains, far from the countries
+													countries countries</span>
+											</li>
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Price per person</span>
+												<a href="#" class="btn btn-sm btn-book">book now</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4">
+								<div class="single-destinations">
+									<div class="thumb">
+										<img class="img-fluid" src="/images/packages/d6.jpg" alt="">
+									</div>
+									<div class="details">
+										<h4>Holiday Sea beach Blue Ocean</h4>
+										<p>
+											United staes of America
+										</p>
+										<li class="d-flex justify-content-between align-items-center">
+											<span>Rooms starting at </span>
+											<span class="thumb-price"> $40
+												/night</span>
+										</li>
+										<ul class="package-list">
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Far far away, behind the word mountains, far from the
+													countries</span>
+											</li>
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Price per person</span>
+												<a href="#" class="btn btn-sm btn-book">book now</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4">
+								<div class="single-destinations">
+									<div class="thumb">
+										<img class="img-fluid" src="/images/packages/d3.jpg" alt="">
+									</div>
+									<div class="details">
+										<h4>Holiday Sea beach Blue Ocean</h4>
+										<p>
+											United staes of America
+										</p>
+										<li class="d-flex justify-content-between align-items-center">
+											<span>Rooms starting at </span>
+											<span class="thumb-price"> $40
+												/night</span>
+										</li>
+										<ul class="package-list">
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Far far away, behind the word mountains, far from the
+													countries</span>
+											</li>
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Price per person</span>
+												<a href="#" class="btn btn-sm btn-book">book now</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4">
+								<div class="single-destinations">
+									<div class="thumb">
+										<img class="img-fluid" src="/images/packages/d1.jpg" alt="">
+									</div>
+									<div class="details">
+										<h4>Holiday Sea beach Blue Ocean</h4>
+										<p>
+											United staes of America
+										</p>
+										<li class="d-flex justify-content-between align-items-center">
+											<span>Rooms starting at </span>
+											<span class="thumb-price"> $40
+												/night</span>
+										</li>
+										<ul class="package-list">
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Far far away, behind the word mountains, far from the
+													countries</span>
+											</li>
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Price per person</span>
+												<a href="#" class="btn btn-sm btn-book">book now</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 mb-4">
+								<div class="single-destinations">
+									<div class="thumb">
+										<img class="img-fluid" src="/images/packages/d2.jpg" alt="">
+									</div>
+									<div class="details">
+										<h4>Holiday Sea beach Blue Ocean</h4>
+										<p>
+											United staes of America
+										</p>
+										<li class="d-flex justify-content-between align-items-center">
+											<span>Rooms starting at </span>
+											<span class="thumb-price"> $40
+												/night</span>
+										</li>
+										<ul class="package-list">
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Far far away, behind the word mountains, far from the
+													countries</span>
+											</li>
+											<li class="d-flex justify-content-between align-items-center">
+												<span>Price per person</span>
+												<a href="#" class="btn btn-sm btn-book">book now</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+</section>
+</div>
+</section>
+<!-- End hot-deal Area -->
+
+<!-- Start home-about Area -->
+<section class="home-about-area">
+	<div class="container-fluid">
+		<div class="row align-items-center justify-content-end">
+			<div class="col-lg-6 col-md-12 home-about-left">
+				<h1>
+					Did not find your Package? <br>
+					Feel free to ask us. <br>
+					We‘ll make it for you
+				</h1>
+				<p>
+					inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct
+					standards
+					especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is
+					beyond
+					reproach. inappropriate behavior is often laughed.
+				</p>
+				<a href="#" class="primary-btn text-uppercase">request custom price</a>
+			</div>
+			<div class="col-lg-6 col-md-12 home-about-right no-padding">
+				<img class="img-fluid" src="/images/packages/about-img.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End home-about Area -->
+<%- include('includes/footer.ejs') %>
