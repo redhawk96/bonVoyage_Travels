@@ -21,6 +21,17 @@ class Hotel {
       });
   }
 
+  static fetchAll(){
+    const db = getDb();
+    return db.collection('hotels').find().toArray()
+    .then(hotels => {
+      return hotels;
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+
 }
 
 module.exports = Hotel;

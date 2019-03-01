@@ -1,5 +1,10 @@
 const Hotel = require('../models/hotel.js');
 
+
+exports.getAddHotel = (req, res, next) => {
+  res.render('admin/add-hotel');
+}
+
 exports.postAddHotel = (req, res, next) => {
   const name = req.body.hotelName;
   const location = req.body.location;
@@ -10,7 +15,6 @@ exports.postAddHotel = (req, res, next) => {
   hotel
     .save()
     .then(result => {
-      // console.log(result);
       console.log('Created hotel');
       res.redirect('/admin/add-hotel');
     })
@@ -23,8 +27,8 @@ exports.getHotels = (req, res, next) => {
   Hotel.fetchAll()
     .then(hotels => {
       res.render('customer/hotel_packages', {
-        hots : hotels,
-        title: 'Home', 
+        hots: hotels,
+        title: 'Hotel Packages',
         bannerTitle: 'Hotel'
       });
     })
@@ -33,7 +37,3 @@ exports.getHotels = (req, res, next) => {
     });
 };
 
-
-exports.getAddHotel = (req, res, next) => {
-  res.render('admin/add-hotel');
-}
