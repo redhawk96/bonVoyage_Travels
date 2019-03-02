@@ -37,3 +37,17 @@ exports.getHotels = (req, res, next) => {
     });
 };
 
+exports.getHotel = (req, res, next) => {
+  const hoteId = req.params.hotelId;
+  Hotel.findById(hoteId)
+    .then(hotel => {
+      res.render('customer/hotel-detail', {
+        hotel: hotel,
+        title: 'Hotel | '+hotel.name,
+        bannerTitle: hotel.name
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    })
+}

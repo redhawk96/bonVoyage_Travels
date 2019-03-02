@@ -1,3 +1,4 @@
+const mongodb = require('mongodb');
 const getDb = require('../util/database').getDb;
 
 class Hotel {
@@ -12,7 +13,7 @@ class Hotel {
   save() {
     const db = getDb();
     return db.collection('hotels')
-    .insertOne(this)
+      .insertOne(this)
       .then(result => {
         console.log(result);
       })
@@ -21,15 +22,30 @@ class Hotel {
       });
   }
 
-  static fetchAll(){
+  static fetchAll() {
     const db = getDb();
     return db.collection('hotels').find().toArray()
-    .then(hotels => {
-      return hotels;
-    })
-    .catch(err => {
-      console.log(err);
-    });
+      .then(hotels => {
+        return hotels;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  static findById(hotelId) {
+    const db = getDb();
+    return db
+      .collection('hotels')
+      .find({ _id: new mongodb.ObjectId(hotelId) })
+      .next()
+      .then(hotel => {
+        console.log(hotel);
+        return hotel;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
 }
